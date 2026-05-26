@@ -39,4 +39,4 @@ npm create vite@latest .
   <Link to="/"></Link>
   ```
 - `useNavigate()`
-- 3202 김효일
+- 3202 김효일 1-1	날짜 표시?	★	Date, 컴포넌트 렌더링
