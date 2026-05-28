@@ -39,4 +39,4 @@ npm create vite@latest .
   <Link to="/"></Link>
   ```
 - `useNavigate()`
-- 3202 김효일
+- 3202 김효일 1-5	배경음악	★★★	useRef, <audio>, 재생/정지 상태
