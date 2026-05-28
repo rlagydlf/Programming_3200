@@ -11,6 +11,7 @@ export default function TodoList({ todos, ...rest }) {
                 // todos에서 하나씩 꺼내서 todo -> <TodoItem todo={todo} />
                 todos.map((todo) => <TodoItem key={todo.id} todo={todo} {...rest} />)
             }
+            <button onClick={rest.deleteTodoall}>전체 삭제</button>
         </ul>
     )
 }

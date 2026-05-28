@@ -39,4 +39,4 @@ npm create vite@latest .
   <Link to="/"></Link>
   ```
 - `useNavigate()`
-- 3202 김효일
+- 3202 김효일 3-3	전체 삭제	★	배열 초기화, confirm modal
