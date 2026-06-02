@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom'
 import CounterApp from './CounterApp.jsx'
 import TodoListApp from './TodoListApp.jsx'
@@ -25,8 +26,40 @@ function LinkButtonPageApp() {
 }
 
 export default function RouterApp() {
+    const audioRef = useRef(null)
+    const [isPlaying, setIsPlaying] = useState(false)
+
+    useEffect(() => {
+        if (!audioRef.current) return
+
+        if (isPlaying) {
+            const promise = audioRef.current.play()
+            if (promise instanceof Promise) {
+                promise.catch(() => setIsPlaying(false))
+            }
+        } else {
+            audioRef.current.pause()
+        }
+    }, [isPlaying])
+
     return (
         <BrowserRouter>
+            <div className="music-player">
+                <button
+                    type="button"
+                    className="music-toggle"
+                    onClick={() => setIsPlaying((current) => !current)}
+                >
+                    {isPlaying ? '음악 중지' : '배경음악 재생'}
+                </button>
+                <span className="music-status">{isPlaying ? '재생 중' : '정지 중'}</span>
+            </div>
+            <audio
+                ref={audioRef}
+                src="public/music/pokemon_song.mp3"
+                loop
+                preload="auto"
+            />
             <Routes>
                 <Route path="/" element={<LinkButtonPageApp />} />
                 <Route path="/counterapp" element={<CounterApp />} />
