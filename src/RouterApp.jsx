@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom'
 import CounterApp from './CounterApp.jsx'
 import TodoListApp from './TodoListApp.jsx'
+import NoTubeApp from './NoTubeApp.jsx'
+import YouTubeWatchApp from './YouTubeWatchApp.jsx'
 
 function LinkButtonPageApp() {
     const navigate = useNavigate();
